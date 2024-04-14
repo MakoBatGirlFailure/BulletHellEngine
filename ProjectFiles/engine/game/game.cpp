@@ -1,6 +1,6 @@
 #include "game.h"
 
-Game::Game(std::string title, int posx, int posy, int w, int h, int flag){
+Game::Game(std::string title, int posx, int posy, int w, int h, int flag): s("assets/sprites/placeholder.png"){
     //initialize SDL 
     this->title = title; 
 
@@ -12,8 +12,9 @@ Game::Game(std::string title, int posx, int posy, int w, int h, int flag){
             this->running = true;
             
             //zona de debug pra sprite
-            //s.move(250, 150);
-            
+            this->s.setRenderer(this->gRenderer);
+            this->s.init();
+
             return;
         } 
 
@@ -25,6 +26,7 @@ Game::Game(std::string title, int posx, int posy, int w, int h, int flag){
 void Game::render(){
     SDL_SetRenderDrawColor(this->gRenderer, 0, 0, 0, 255);
     SDL_RenderClear(this->gRenderer);
+    this->s.render();
     SDL_RenderPresent(this->gRenderer);
     
     //s.move(640/2, 420/2);    

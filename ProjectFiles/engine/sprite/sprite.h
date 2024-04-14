@@ -9,13 +9,13 @@ class Sprite: public Object2D{
     //The game renderer
     SDL_Renderer * renderer; 
     //Path for the resource file (the images files)
+    
+    
     const char * resourcePath;
     //Constructor
     Sprite(const char * resourcePath);
     //Destructor
     ~Sprite();
-    //Move the sprite 
-    void move(float x, float y);
     //Initialize sprite from SDL
     void init();
     //Set the game renderer 
@@ -25,11 +25,7 @@ class Sprite: public Object2D{
 
     //Sprite texture
     SDL_Texture * spriteTex;
-    //first rectangle 
-    SDL_Rect sourceRect;
-    //destination rectangle 
-    SDL_Rect destRect;
-};
+ };
 
 
 #endif

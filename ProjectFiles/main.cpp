@@ -16,4 +16,5 @@ int main(int argc, char* args[]){
 
     Game g("Teste 123", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 420, SDL_WINDOW_SHOWN);
     g.update();
+    
 }   

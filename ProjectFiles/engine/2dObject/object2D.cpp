@@ -1,5 +1,5 @@
 #include "object2D.h"
-
+#include <iostream>
 
 //Object2D constructor 
 Object2D::Object2D(float w, float h, float x, float y){
@@ -23,6 +23,12 @@ Vector2 Object2D::getPosition(){
 }
 
 //Setters
+void Object2D::setDimension(float w, float h){
+    this->width = w; 
+    this->height = h;
+    updateRectangleDimension(this->width, this->height);
+}
+
 void Object2D::setWidth(float w){
     this->width = w;
     updateRectangleDimension(this->width, this->height);
@@ -42,8 +48,8 @@ void Object2D::setPosition(float x, float y){
 
 //public functions 
 void Object2D::translate(float dx, float dy){
-    this->position.x -= dx;
-    this->position.y -= dy; 
+    this->position.x += dx;
+    this->position.y += dy; 
 
     updateRectanglePosition(this->position.x, this->position.y);
 }
