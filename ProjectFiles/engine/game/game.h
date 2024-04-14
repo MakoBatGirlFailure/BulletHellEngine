@@ -15,6 +15,15 @@ class Game {
         void render();
         void eventHandler();
         void update();
+        //getters and setters
+        SDL_Renderer * getRenderer();
+        
+        SDL_Window * getWindow();
+        
+        const char * getTitle();
+        void setTitle(const char * title);
+
+        //Constructor 
         Game(std::string title, int posx, int posy, int w, int h, int flag);
     private:
 };

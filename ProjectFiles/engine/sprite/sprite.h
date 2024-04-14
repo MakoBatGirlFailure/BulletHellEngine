@@ -1,9 +1,10 @@
 #ifndef SPRITE_H
 #define SPRITE_H
+#include "../2dObject/object2D.h"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-class Sprite{
+class Sprite: public Object2D{
     public:
     //The game renderer
     SDL_Renderer * renderer; 
