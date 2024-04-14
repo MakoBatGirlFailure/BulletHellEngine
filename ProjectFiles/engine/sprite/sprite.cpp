@@ -1,5 +1,4 @@
 #include "sprite.h"
-#include <iostream>
 Sprite::~Sprite(){
 
 }
@@ -13,11 +12,7 @@ void Sprite::init(){
     SDL_Surface * surface;
     //Load from resource (the path given)
     surface = IMG_Load(resourcePath);
-    if (surface == nullptr){
-        std::cout<<"Error while loading the resource file\n";
-    }
     //Create a texture from surface i think
-    
     this->spriteTex = SDL_CreateTextureFromSurface(this->renderer, surface);
     //free surface 
     SDL_FreeSurface(surface);
@@ -45,11 +40,6 @@ void Sprite::move(float x, float y){
 }
 
 void Sprite::render(){
-    //put this between the RenderClear and RenderPresent 
-
-    std::cout << this->destRect.w << "," << this->destRect.h << std::endl;
-    std::cout << this->sourceRect.x << "," << this->sourceRect.y << std::endl;
-
-    
+    //put this between the RenderClear and RenderPresent     
     SDL_RenderCopy(this->renderer, this->spriteTex, &(this->sourceRect), &(this->destRect));
 }

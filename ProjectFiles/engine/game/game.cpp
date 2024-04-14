@@ -1,4 +1,3 @@
-#include <iostream>
 #include "game.h"
 
 Game::Game(std::string title, int posx, int posy, int w, int h, int flag){
