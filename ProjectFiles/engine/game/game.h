@@ -4,10 +4,12 @@
 #include <string>
 #include <SDL2/SDL.h>
 #include "../sprite/sprite.h"
+#include "../player/player.h"
 
 class Game {
     public:
         Sprite s;
+        Player p;
 
         //Class attributes 
         std::string title;

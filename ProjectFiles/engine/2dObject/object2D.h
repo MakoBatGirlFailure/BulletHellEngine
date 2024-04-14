@@ -54,6 +54,8 @@ class Object2D{
 
     //public functions 
     void translate(float dx, float dy);
+    void update(float dt);
+    void render();
 
     SDL_Rect getSourceRect(){
         return this->sourceRectangle;

@@ -53,3 +53,7 @@ void Object2D::translate(float dx, float dy){
 
     updateRectanglePosition(this->position.x, this->position.y);
 }
+
+void Object2D::update(float dt){
+    
+}
