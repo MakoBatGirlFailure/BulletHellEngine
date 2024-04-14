@@ -3,6 +3,7 @@
 
 #include <string>
 #include <SDL2/SDL.h>
+#include <iostream>
 #include "../sprite/sprite.h"
 #include "../player/player.h"
 

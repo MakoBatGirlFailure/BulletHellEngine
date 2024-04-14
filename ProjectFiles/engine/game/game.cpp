@@ -42,6 +42,24 @@ void Game::eventHandler(){
                 this->running = false;
             break;
 
+            case SDL_KEYDOWN: {
+                switch(event.key.keysym.sym){
+                    case SDLK_LEFT:
+                        this->p.setPosition(p.getPosition().x - 20, p.getPosition().y);
+                    break;
+                    case SDLK_RIGHT:
+                        this->p.setPosition(p.getPosition().x + 20, p.getPosition().y);
+                    break;
+                    case SDLK_UP:
+                        this->p.setPosition(p.getPosition().x, p.getPosition().y - 20);
+                    break;
+                    case SDLK_DOWN:
+                        this->p.setPosition(p.getPosition().x, p.getPosition().y + 20);
+                    break;
+                }
+            }
+            break;
+            
             default:
             break;
         }
