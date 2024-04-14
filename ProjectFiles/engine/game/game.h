@@ -8,8 +8,6 @@
 class Game {
     public:
         //Temporary sprite component 
-        //DEBUG: DELETE THIS SH*T 
-        Sprite s;
      
 
         //Class attributes 
