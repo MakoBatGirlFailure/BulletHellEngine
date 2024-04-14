@@ -3,9 +3,15 @@
 
 #include <string>
 #include <SDL2/SDL.h>
+#include "../sprite/sprite.h"
 
 class Game {
     public:
+        //Temporary sprite component 
+        //DEBUG: DELETE THIS SH*T 
+        Sprite s;
+     
+
         //Class attributes 
         std::string title;
         SDL_Window * gWindow; 
