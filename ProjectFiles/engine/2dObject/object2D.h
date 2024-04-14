@@ -2,7 +2,6 @@
 #define OBJECT_2D
 
 #include <SDL2/SDL.h>
-#include <iostream>
 
 struct Position2D {
     float x;
@@ -26,14 +25,7 @@ class Object2D{
 
     void updateRectangleDimension(float w, float h){
         this->destinationRectangle.w = this->sourceRectangle.w = w;
-        this->destinationRectangle.h = this->sourceRectangle.h = h;
-
-        std::cout << "Dimension changed to: " << this->sourceRectangle.w << "\n";
-        std::cout << "Dimension changed to: " << this->sourceRectangle.h << "\n";
-
-        std::cout << "POSITION: " << this->sourceRectangle.x << std::endl; 
-        std::cout << "POSITION: " << this->sourceRectangle.x << std::endl; 
-        
+        this->destinationRectangle.h = this->sourceRectangle.h = h;        
     }
     
     void updateRectanglePosition(float x, float y){
@@ -44,17 +36,8 @@ class Object2D{
         this->destinationRectangle.y = this->sourceRectangle.y; 
 
         this->destinationRectangle.w = this->sourceRectangle.w;
-        this->destinationRectangle.w = this->sourceRectangle.w;
-
-        std::cout << "Dest Rect: (wxh)" << destinationRectangle.w << "," << destinationRectangle.h << std::endl;
-        std::cout << "Source Rect: (wxh)" << sourceRectangle.w << "," << sourceRectangle.h << std::endl;
-        
-        std::cout << "Dest Rect: (x,y)" << destinationRectangle.x << "," << destinationRectangle.y << std::endl;
-        std::cout << "Source Rect: (x, y)" << sourceRectangle.x << "," << sourceRectangle.y << std::endl;
-        
-        
+        this->destinationRectangle.w = this->sourceRectangle.w;        
     }
-
 
     //Getters 
     public:
