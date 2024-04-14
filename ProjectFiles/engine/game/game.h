@@ -7,9 +7,6 @@
 
 class Game {
     public:
-        //Temporary sprite component 
-     
-
         //Class attributes 
         std::string title;
         SDL_Window * gWindow; 
