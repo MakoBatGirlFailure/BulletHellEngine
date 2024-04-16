@@ -4,8 +4,8 @@
 #include <SDL2/SDL.h>
 
 struct Position2D {
-    float x;
-    float y;
+    double x;
+    double y;
 };
 
 typedef struct Position2D Vector2;
@@ -14,8 +14,8 @@ typedef struct Position2D Vector2;
 class Object2D{
     private:
     //Base class member 
-    float width;
-    float height; 
+    double width;
+    double height; 
     Vector2 position;
 
     //SDL members 
@@ -23,12 +23,12 @@ class Object2D{
     SDL_Rect destinationRectangle;
 
 
-    void updateRectangleDimension(float w, float h){
+    void updateRectangleDimension(double w, double h){
         this->destinationRectangle.w = this->sourceRectangle.w = w;
         this->destinationRectangle.h = this->sourceRectangle.h = h;        
     }
     
-    void updateRectanglePosition(float x, float y){
+    void updateRectanglePosition(double x, double y){
         this->sourceRectangle.x = static_cast<int>(x);
         this->sourceRectangle.y = static_cast<int>(y);
         
@@ -41,20 +41,20 @@ class Object2D{
 
     //Getters 
     public:
-    Object2D(float w, float h, float x, float y);
-    float getWidth();
-    float getHeight();
+    Object2D(double w, double h, double x, double y);
+    double getWidth();
+    double getHeight();
     Vector2 getPosition();
 
     //Setters
-    void setDimension(float w, float h);
-    void setWidth(float w);
-    void setHeight(float h);
-    void setPosition(float x, float y);
+    void setDimension(double w, double h);
+    void setWidth(double w);
+    void setHeight(double h);
+    void setPosition(double x, double y);
 
     //public functions 
-    void translate(float dx, float dy);
-    void update(float dt);
+    void translate(double dx, double dy);
+    void update(double dt);
     void render();
 
     SDL_Rect getSourceRect(){

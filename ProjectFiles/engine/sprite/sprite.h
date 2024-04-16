@@ -17,7 +17,7 @@ class Sprite: public Object2D{
     //Destructor
     ~Sprite();
     //Initialize sprite from SDL
-    void init();
+    void init(SDL_Renderer * gRenderer);
     //Set the game renderer 
     void setRenderer(SDL_Renderer * gRenderer);
     //Draw the object from scene

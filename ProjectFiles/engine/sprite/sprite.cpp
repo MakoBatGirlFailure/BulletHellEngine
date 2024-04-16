@@ -10,7 +10,9 @@ Sprite::Sprite(const char * resourcePath): Object2D(0, 0, 0, 0){
 }
 
 //Init the sprite parameters (this should be called after the constructor)
-void Sprite::init(){
+void Sprite::init(SDL_Renderer * gRenderer){
+    //set the renderer 
+    this->setRenderer(gRenderer);
     //Temporary surface to be freed 
     SDL_Surface * surface;
     //Load from resource (the path given)

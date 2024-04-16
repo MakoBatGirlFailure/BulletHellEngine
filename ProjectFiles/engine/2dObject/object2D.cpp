@@ -2,7 +2,7 @@
 #include <iostream>
 
 //Object2D constructor 
-Object2D::Object2D(float w, float h, float x, float y){
+Object2D::Object2D(double w, double h, double x, double y){
     this->width = w;
     this->height = h;
     this->position.x = x; 
@@ -10,11 +10,11 @@ Object2D::Object2D(float w, float h, float x, float y){
 }
 
 
-float Object2D::getWidth(){
+double Object2D::getWidth(){
     return this->width;
 }
 
-float Object2D::getHeight(){
+double Object2D::getHeight(){
     return this->height;
 }
 
@@ -23,23 +23,23 @@ Vector2 Object2D::getPosition(){
 }
 
 //Setters
-void Object2D::setDimension(float w, float h){
+void Object2D::setDimension(double w, double h){
     this->width = w; 
     this->height = h;
     updateRectangleDimension(this->width, this->height);
 }
 
-void Object2D::setWidth(float w){
+void Object2D::setWidth(double w){
     this->width = w;
     updateRectangleDimension(this->width, this->height);
 }
 
-void Object2D::setHeight(float h){
+void Object2D::setHeight(double h){
     this->height = h;
     updateRectangleDimension(this->width, this->height);
 }
 
-void Object2D::setPosition(float x, float y){
+void Object2D::setPosition(double x, double y){
     this->position.x = x;
     this->position.y = y; 
 
@@ -47,13 +47,13 @@ void Object2D::setPosition(float x, float y){
 }
 
 //public functions 
-void Object2D::translate(float dx, float dy){
+void Object2D::translate(double dx, double dy){
     this->position.x += dx;
     this->position.y += dy; 
 
     updateRectanglePosition(this->position.x, this->position.y);
 }
 
-void Object2D::update(float dt){
+void Object2D::update(double dt){
     
 }

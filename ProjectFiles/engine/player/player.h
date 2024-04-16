@@ -3,6 +3,7 @@
 
 #include "../2dObject/object2D.h"
 #include "../sprite/sprite.h"
+#include <iostream>
 
 class Player: public Object2D{
     public:
@@ -15,7 +16,7 @@ class Player: public Object2D{
     
     //render the player sprite 
     void render();
-    void update(float dt);
+    void update(double dt);
     
 };
 

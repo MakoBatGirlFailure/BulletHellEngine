@@ -12,8 +12,7 @@ Game::Game(std::string title, int posx, int posy, int w, int h, int flag): p(), 
             this->running = true;
             
             //Debug zone for another components 
-            this->s.setRenderer(this->gRenderer);
-            this->s.init();
+            this->s.init(this->gRenderer);
             this->p.init(this->gRenderer);
             this->p.translate(30, 0);
             return;
@@ -41,24 +40,6 @@ void Game::eventHandler(){
             case SDL_QUIT:
                 this->running = false;
             break;
-
-            case SDL_KEYDOWN: {
-                switch(event.key.keysym.sym){
-                    case SDLK_LEFT:
-                        this->p.setPosition(p.getPosition().x - 20, p.getPosition().y);
-                    break;
-                    case SDLK_RIGHT:
-                        this->p.setPosition(p.getPosition().x + 20, p.getPosition().y);
-                    break;
-                    case SDLK_UP:
-                        this->p.setPosition(p.getPosition().x, p.getPosition().y - 20);
-                    break;
-                    case SDLK_DOWN:
-                        this->p.setPosition(p.getPosition().x, p.getPosition().y + 20);
-                    break;
-                }
-            }
-            break;
             
             default:
             break;
@@ -67,8 +48,17 @@ void Game::eventHandler(){
 }
 
 void Game::update(){
+    //Get deltatime 
+    Uint64 lastTime = 0;
+    Uint64 currentTime = 0;
+    double dt = 0.0f; 
     while (this->running){
+        currentTime = SDL_GetTicks64();
+        dt = (currentTime - lastTime)/((double)1000.0);
+        lastTime = currentTime;
+        
         this->render();
         this->eventHandler();
+        this->p.update(dt);
     }
 }

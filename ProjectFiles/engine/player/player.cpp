@@ -11,7 +11,7 @@ void Player::init(SDL_Renderer * renderer){
 
     //Initialize the sprite object
     this->s.setRenderer(renderer);
-    this->s.init();
+    this->s.init(renderer);
 
     this->s.setPosition(this->getPosition().x, this->getPosition().y);
     
@@ -22,6 +22,34 @@ void Player::render(){
     this->s.render();
 }
 
-void Player::update(float dt){
+void Player::update(double dt){
+    SDL_Event event;
+    double speed = 150.0;
+    this->setPosition(this->getPosition().x + (speed * dt), this->getPosition().y);
+    /**switch(SDL_PollEvent(&event)){
+            case SDL_KEYDOWN: {
+                std::cout << "Botão pressionado" << std::endl;
+                switch(event.key.keysym.sym){
+                    case SDLK_LEFT:
+                        this->setPosition(this->getPosition().x - speed * dt, this->getPosition().y);
+                    break;
+                    case SDLK_RIGHT:
+                        this->setPosition(this->getPosition().x + speed * dt, this->getPosition().y);
+                    break;
+                    case SDLK_UP:
+                        this->setPosition(this->getPosition().x, this->getPosition().y - speed * dt);
+                    break;
+                    case SDLK_DOWN:
+                        this->setPosition(this->getPosition().x, this->getPosition().y + speed * dt);
+                    break;
 
+                }
+            }
+            break;
+
+            default:
+            break;
+    
+    PLACEHOLDER CODE BY THE WAY
+    }**/
 }
