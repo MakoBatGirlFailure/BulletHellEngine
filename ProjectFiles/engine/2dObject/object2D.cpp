@@ -55,5 +55,5 @@ void Object2D::translate(double dx, double dy){
 }
 
 void Object2D::update(double dt){
-    
+
 }

@@ -6,6 +6,7 @@
 #include <iostream>
 #include "../sprite/sprite.h"
 #include "../player/player.h"
+#include "../helpers/helpers.h"
 
 class Game {
     public:

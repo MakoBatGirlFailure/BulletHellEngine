@@ -2,13 +2,46 @@
 #define OBJECT_2D
 
 #include <SDL2/SDL.h>
+#include "../helpers/helpers.h"
 
-struct Position2D {
-    double x;
+class Vector2 {
+    public:
+    Vector2();
+    //Coordinates
+    double x; 
     double y;
+
+    void init(double x, double y);
+
+    void setX(double x);
+    void setY(double y);
+    void setPos(double x, double y);
+    
+    double getX();
+    double getY();
+
+    //get the euclidian distance from a point to another
+    double distance(Vector2 another);
+    
+    //Get another vector 2 reference 
+    Vector2 * getPos();
 };
 
-typedef struct Position2D Vector2;
+//An abstract circle to handle collisions 
+class Circle2D{
+    public:
+    //Constructor 
+    Circle2D();
+    
+    void init(double x, double y, double r);
+
+    Vector2 position;
+    double radius;
+
+    //Getter and setter
+    double getRadius();
+    void setRadius(double value);
+};
 
 //An abstract representation of a 2D object, it does have the operations related with Vector2
 class Object2D{
